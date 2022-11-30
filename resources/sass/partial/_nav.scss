@@ -1,0 +1,135 @@
+@import "~bootstrap/scss/bootstrap-grid";
+@import "../shared/_colors";
+
+nav.site-nav {
+  width: 95%;
+  height: 50px;
+  margin: 15px auto;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.26);
+  box-shadow: 0px 4px 11px -4px rgba(0, 0, 0, 0.26);
+  z-index: 9999;
+  .navbar-brand {
+    width: 100px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-collapse {
+    @include media-breakpoint-up(md) {
+      height: 100%;
+      .navbar-nav {
+        height: 100%;
+      }
+    }
+  }
+
+  .navbar-nav {
+    .nav-item {
+      position: relative;
+      display: flex;
+      font-size: 15px;
+
+      .nav-link {
+        color: #48484A;
+
+        @include media-breakpoint-down(md) {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      .dropdown-item {
+        transition: background-color .2s ease;
+        &.active, &:hover, &:active, &:focus {
+          color: inherit !important;
+          background-color: lighten($c-secondary, 40) !important;
+          transition: background-color .2s ease;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+
+    .navbar-brand {
+      width: 100px;
+    }
+    .navbar-nav {
+      .nav-item {
+        transition: background-color .2s ease;
+
+        &:hover, &:active, &:focus {
+          background-color: lighten(#DBE5EA, 5);
+          transition: background-color .2s ease;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 20px;
+          height: 15px;
+          width: 0.5px;
+          background-color: #D6D6D6;
+        }
+
+        &:last-of-type {
+          &::before {
+            content: unset;
+          }
+        }
+      }
+      .last-child {
+        &::before {
+          display: none;
+        }
+      }
+
+      .active {
+        background-color: #DBE5EA !important;
+      }
+
+      .nav-link {
+        margin: auto;
+      }
+
+      .nav-link {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
+
+      .dropdown {
+        .dropdown-menu {
+          padding: 0;
+          border: none;
+
+          a {
+            font-size: .84em;
+          }
+
+          .dropdown-item {
+            padding: .75rem 1.5rem;
+          }
+
+          .dropdown-item-top {
+            border-bottom: 1px solid white;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .navbar-brand {
+      width: 130px;
+    }
+  }
+}

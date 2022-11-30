@@ -1,0 +1,88 @@
+// Vendor
+
+.btn {
+  padding: .375rem 1.25rem;
+  transition: all ease .2s;
+
+  &:hover, &:active, &:focus {
+    transition: all ease .2s;
+  }
+}
+
+.btn-pill {
+  border-radius: 50px;
+}
+
+// Primary
+
+.btn-primary {
+  color: #fff;
+  background-color: $c-secondary;
+
+  &:hover, &:active, &:focus {
+    background-color: darken($color: $c-secondary, $amount: 5);
+  }
+}
+
+.btn-primary-outline {
+  color: $c-secondary;
+  background-color: #FAFAFA;
+  border: 1px solid $c-secondary;
+
+  &:hover, &:active, &:focus {
+    @extend .btn-primary;
+  }
+}
+
+// Secondary
+
+.btn-secondary {
+  color: #fff;
+  background-color: $c-secondary;
+
+  &:hover, &:active, &:focus {
+    background-color: darken($color: $c-secondary, $amount: 5);
+  }
+}
+
+.btn-secondary-outline {
+  color: $c-secondary;
+  background-color: #fff;
+
+  &:hover, &:active, &:focus {
+    @extend .btn-secondary;
+  }
+}
+
+// Complementary 
+
+.btn-complementary {
+  color: #fff;
+  background-color: $c-complementary;
+
+  &:hover, &:active, &:focus {
+    color: #fff;
+    background-color: darken($color: $c-complementary, $amount: 5);
+  }
+}
+
+.btn-complementary-outline {
+  color: $c-complementary;
+  background-color: #fff;
+
+  &:hover, &:active, &:focus {
+    @extend .btn-complementary;
+  }
+}
+
+// Light
+
+.btn-light-outline {
+  border: 1px solid #fff;
+  color: #fff;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, .15);
+    color: #BCF6FD;
+  }
+}

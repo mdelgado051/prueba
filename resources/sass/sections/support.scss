@@ -1,0 +1,144 @@
+@import "~bootstrap/scss/bootstrap-grid";   
+@import '../shared/mixins';
+.cover{
+    .cover-description{
+        padding: 50px 15px;
+        @include pattern-tech;
+        &:after {
+            bottom: 0;
+            left: 0;
+            width: 250px;
+            height: 250px;
+        }
+    }
+    .cover-img{
+        height: 300px;
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    @include media-breakpoint-up(sm) {
+
+        .cover-img{
+            height: 420px;
+        }
+    }
+    @include media-breakpoint-up(md) {
+        .cover-description{
+            padding: 0 50px;
+            &:after {
+                bottom: -30%;
+                width: 250px;
+                height: 250px;
+                opacity: .55;
+            }
+        }
+        .cover-img{
+            height: 470px;
+
+            img {
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        .cover-description{
+            padding: 0 70px;
+            &:after {
+                bottom: -40%;
+                width: 300px;
+                height: 300px;
+            }
+        }
+        .cover-img{
+            height: 110vh;
+        }
+    }
+    @include media-breakpoint-up(xl) {
+        .cover-description{
+            padding: 0 120px;
+            @include pattern-tech;
+            &:after {
+                bottom: -50%;
+                width: 330px;
+                height: 330px;
+            }
+        }
+    }
+    @media screen and (min-width:1600px){
+        .cover-img{
+            height: 770px;
+        }
+    }
+}
+.support{
+    padding: 40px 0;
+    overflow: hidden;
+    &>img{
+        right: -15%;
+        bottom: -30px;
+        width: 350px;
+    }
+    article{
+        div{
+            ul{
+                @include ul-list-style-cicle; 
+                padding-left: 50px;
+            }
+        }
+        .div-form{
+            z-index: 9;
+            -webkit-box-shadow: -3px 3px 14px -7px rgba(0,0,0,0.75);
+            -moz-box-shadow: -3px 3px 14px -7px rgba(0,0,0,0.75);
+            box-shadow: -3px 3px 14px -7px rgba(0,0,0,0.75);
+            form{
+                @include contact-form;
+                @include media-breakpoint-up(lg) {
+                    button{
+                        margin-left: 70%;
+                    }
+                }
+            }
+        }
+        &>img{
+            bottom: -19%;
+            right: -41%;
+            z-index: 0;
+        }
+    }
+    @include media-breakpoint-up(md) {
+        padding: 100px 0;
+        &>img{
+            right: -5%;
+            bottom: -5%;
+            width: 400px;
+        }
+        article{
+            &>img{
+                bottom: -30%;
+                right: -10%;
+            }
+            .div-form > form > button{
+                margin-left: 65%;
+            }   
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        &>img{
+            width: 500px;
+            right: -10%;
+        }
+        article > .div-form > form > button{
+            margin-left: 70%;
+        }
+    }
+    @include media-breakpoint-up(xl) {
+        &>img{
+            right: -5%;
+            width: 550px;
+        }
+    }
+}

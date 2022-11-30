@@ -1,0 +1,195 @@
+@import '../shared/colors';
+@import "~bootstrap/scss/bootstrap-grid";   
+@import '../shared/mixins';
+
+#cover{
+    padding: 150px 0 100px;
+    @include background-cover;
+    @include media-breakpoint-up(md) {
+        padding: 250px 0 170px;
+    }
+}
+#eventos{
+    width: 90%;
+    margin: 100px 0 100px 10%;
+    .swiper-slide{
+        width: 75% !important;
+        background-color: #F5F5F5;
+        margin-right: 30px;
+        &.swiper-slide-active{
+            width: 80% !important;
+            .event-cont{
+                p{
+                    width: 100%;
+                }
+            }
+        }
+        .event-img{
+            @include background-cover;
+            height: 180px;
+            h6{
+                line-height: 1;
+            }
+        }
+        .event-cont{
+            position: relative;
+            height: 120px;
+            background-color: #F5F5F5;
+            -webkit-box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.75);
+            img{
+                transform: rotate(-136deg);
+                top: -2rem;
+                right: 2rem;
+            }
+            p{
+                width: 80%;
+            }
+        }
+    }
+    @include media-breakpoint-up(md) {
+        .swiper-slide{
+            width: 30% !important;
+            margin-top: 25px;
+            &.swiper-slide-active{
+                width: 40% !important;
+                margin-top: 0;
+                .event-img{
+                    height: 150px;
+                }
+                .event-cont{
+                    height: 100px;
+                    p{
+                        width: 100%;
+                    }
+                }
+            }
+            .event-img{
+                height: 130px;
+            }
+            .event-cont{
+                height: 100px;
+            }
+        }
+    } 
+    @include media-breakpoint-up(lg) {
+        .swiper-slide{
+            margin-right: 30px;
+            &.swiper-slide-active{
+                width: 45% !important;
+            }
+            .event-img{
+                height: 120px;
+            }
+            .event-cont{
+                height: 90px;
+            }
+        }
+    } 
+    @include media-breakpoint-up(xl) {
+        .swiper-slide{
+            width: 25% !important;
+            margin-right: 35px;
+            &.swiper-slide-active{
+                width: 45% !important;
+            }
+        }
+    } 
+}
+#blog{
+    padding: 100px 0;
+    background-color: white;
+   article{
+        .entry-summary{
+          padding: 0 40px;
+
+          h3{
+              position: relative;
+              width: fit-content;
+            &::before{
+                content: '“';
+                position: absolute;
+                top: -25px;
+                left: -15px;
+                color: $c-complementary;
+                font-size: 60px;
+                opacity: .5;
+            }
+            &::after{
+                content: '”';
+                position: absolute;
+                bottom: -50px;
+                right: -25px;
+                color: $c-complementary;
+                font-size: 60px;
+                opacity: .5;
+            }
+          }
+          .btn{
+              width: 50%;
+              margin-left: 25%;
+          }
+       }
+       .images{
+           img{
+               width: 100%;
+           }
+       }
+       .img-dots-pattern{
+        @include pattern-dots;
+            &:after {
+                top: -30px;
+                right: 30px;
+                width: 50px;
+                height: 50px;
+                opacity: 0.55;
+            }
+       }
+   }
+   @include media-breakpoint-up(md) {
+        h2{
+            margin-left: 30px;
+        }
+        article > .entry-summary{
+           padding: 0 30px;
+           .btn{
+                width: fit-content;
+                margin-left: 70%;
+            }
+        }
+        article > .img-dots-pattern{
+            &:after {
+                top: -50px;
+                right: 80px;
+                width: 80px;
+                height: 80px;
+            }
+        }
+   }
+   @include media-breakpoint-up(lg) {
+        h2{
+            margin-left: 50px;
+        }
+        article > .entry-summary{
+            padding: 0 50px;
+            .btn{
+                margin-left: 85%;
+            }
+        }
+        article > .img-dots-pattern:after {
+            top: -60px;
+            right: 120px;
+            width: 100px;
+            height: 100px;
+        }
+   }
+   @include media-breakpoint-up(xl) {
+        h2{
+            margin-left: 100px;
+        }
+        article > .entry-summary{
+            padding: 0 100px;
+        }
+   }
+}

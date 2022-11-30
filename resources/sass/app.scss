@@ -1,0 +1,81 @@
+@import "partial/layout";
+@import "shared/colors";
+@import "shared/buttons";
+@import "shared/fonts";
+
+html,
+body {
+  background-color: #fafafa;
+}
+
+body {
+  max-width: 1920px;
+  margin: 0 auto !important;
+  overflow-x: hidden;
+  main {
+    margin-top: -58px;
+  }
+  .container {
+    margin: 0 auto !important;
+    @media screen and (min-width: 1600px) {
+      max-width: 1500px !important;
+    }
+  }
+}
+
+.full-section-block {
+  min-height: 100vh;
+
+  > .full-row {
+    min-height: 100vh;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-height: 1024px;
+
+    > .full-row {
+      max-height: 1024px;
+    }
+  }
+
+  @media (min-width: 2000px) {
+    height: 100vh;
+    min-height: unset;
+    max-height: 1200px;
+
+    > .full-row {
+      height: 100vh;
+      min-height: unset;
+      max-height: 1200px;
+    }
+  }
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  transition: color ease 0.2s;
+}
+
+ul {
+  padding: 0;
+
+  li {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+ul.list-disc {
+  padding-left: 15px;
+
+  li {
+    list-style: disc;
+  }
+}
+
+form > textarea {
+  resize: none;
+}

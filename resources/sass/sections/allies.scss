@@ -1,0 +1,143 @@
+@import "~bootstrap/scss/bootstrap-grid";   
+@import '../shared/mixins';
+@import '../shared/colors';
+
+#cover{
+    background-image: url('/img/allies/cover-movil.jpg');
+    @include background-cover;
+    padding: 270px 0 140px;
+    margin-bottom: 200px;
+
+    .cont-form{
+        right: 5%;
+        bottom: -50%;
+        width: 90%;
+        border-radius: 10px;
+        -webkit-box-shadow: -2px 2px 12px -8px rgba(0,0,0,0.75);
+        -moz-box-shadow: -2px 2px 12px -8px rgba(0,0,0,0.75);
+        box-shadow: -2px 2px 12px -8px rgba(0,0,0,0.75);
+        z-index: 99;
+
+        h6 {
+            color: $c-text;
+        }
+        
+        form{
+            @include contact-form;
+            z-index: 99;
+            ul>li{
+                width: 100%;
+            }
+        }
+    }
+    @include media-breakpoint-up(sm) {
+        .cont-form{
+            right: 10%;
+            bottom: -60%;
+            width: 80%;
+        }
+    }
+    @include media-breakpoint-up(md) {
+        background-image: url('/img/allies/cover.jpg');
+        padding: 300px 0 170px;
+        margin-bottom: 0;
+
+        .cont-form{
+            right: 40px;
+            bottom: -140px;
+            width: 45%;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        .cont-form{
+            right: 5%;
+            width: 45%;
+        }
+    }
+    @include media-breakpoint-up(xl) {
+        .cont-form{
+            bottom: -200px;
+        }
+    }
+    @media screen and (min-width:1320px) {
+        .cont-form{
+            width: 35%;
+            right: 215px;
+        }
+    }
+}
+#service{
+    padding: 100px 0;
+    @include pattern-tech-gray-rtl;
+    &:after {
+        bottom: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        opacity: .55;
+        z-index: 0;
+    }
+    ul{
+        @include ul-list-style-cicle;
+        line-height: 2;
+        padding-left: 30px;
+    }
+    img{
+        z-index: 10;
+    }
+    .service-inf{
+        @include pattern-dots;
+        &:after {
+            width: 50px;
+            height: 50px;
+            left: 0;
+            bottom: -45%;
+        }
+    }
+    .cont-image {
+        z-index: 9;
+    }
+    @include media-breakpoint-up(md) {
+        &:after {
+            width: 350px;
+            height: 350px;
+        }
+        ul{
+            padding-left: 50px;
+        }
+        .service-inf:after {
+            width: 100px;
+            height: 100px;
+            bottom: -130px;
+        }
+    }
+    @include media-breakpoint-up(xl) {
+        &:after {
+            width: 400px;
+            height: 400px;
+        }
+        ul{
+            padding-left: 80px;
+        }
+
+        .cont-image {
+            padding-top: 7em !important;
+        }
+    }
+    // @media screen and (min-width:1320px) {
+    //     &:after {
+    //         right: -100px;
+    //     }
+    // }
+}
+#financing{
+    padding: 100px 0;
+    background-color: white;
+        a{
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+        }
+    @include media-breakpoint-up(xl) {
+    }
+}

@@ -1,0 +1,63 @@
+@import "~bootstrap/scss/bootstrap-grid";   
+footer{
+    background: rgb(6,77,168);
+    background: linear-gradient(0deg, rgba(6,77,168,1) 0%, rgba(3,98,172,1) 50%, rgba(0,120,176,1) 100%);
+    color: white;
+    a{
+        color: white;
+
+        &:hover, &:focus, &:active {
+            color: #e8e8e8;
+        }
+    }
+    .navegation{
+        border-bottom: .5px solid rgb(255, 255, 255, .9);
+        ul{
+            li{
+                a{
+                    font-size: 14px;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+    .cont-subsidiary{
+        h6{
+            width: 100%;
+        }
+        .social-networks{
+            width: 15%;
+        }
+        .subsidiary{
+            width: 85%;
+        }
+    }
+
+    @include media-breakpoint-up(md) { 
+        .navegation{
+            border-bottom: none
+        }
+    }
+    @include media-breakpoint-up(lg) { 
+        .navegation{
+           border-right: .5px solid rgb(255, 255, 255, .9);
+            ul{
+                position: relative;
+                p{
+                    &::after{
+                        content: '|';
+                        font-weight: 200;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+                }
+                .p-soporte{
+                    &::after{
+                            content: '';
+                    }
+                }
+            }
+        } 
+    }
+}

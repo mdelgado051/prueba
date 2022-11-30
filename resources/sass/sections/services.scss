@@ -1,0 +1,476 @@
+@import "~bootstrap/scss/bootstrap-grid";
+@import "../shared/colors";
+@import "../shared/mixins";
+
+// Vendor
+
+.solution-collapse {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+
+  .cover {
+    height: 225px;
+
+    background-position: center;
+    background-size: cover;
+
+    @include media-breakpoint-up(lg) {
+      height: 300px;
+    }
+  }
+}
+
+.solution-collapse.collapsing {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.solution-collapse.show {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.collapsing {
+  -webkit-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease !important;
+}
+
+// End Vendor
+
+#cover {
+  @include background-cover;
+  article {
+    position: relative;
+    padding: 280px 0 170px;
+    > p {
+      width: 80%;
+    }
+    div {
+      position: absolute;
+      bottom: -200px;
+      left: 15px;
+      width: 100%;
+      .details {
+        margin-bottom: 0;
+        background: rgb(0, 120, 176);
+        background: linear-gradient(
+          45deg,
+          rgba(0, 120, 176, 1) 0%,
+          rgba(0, 120, 176, 1) 40%,
+          rgba(9, 198, 170, 1) 100%
+        );
+        i {
+          font-size: 26px;
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 300px;
+    article {
+      div {
+        bottom: -230px;
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+    article {
+      div {
+        bottom: -40px;
+        left: 0;
+      }
+      > p {
+        width: 50%;
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    article {
+      > p {
+        width: 40%;
+      }
+    }
+  }
+}
+
+#service-delivery {
+  margin: 150px 0 50px;
+  @include pattern-tech-gray;
+  &:after {
+    bottom: -20px;
+    left: 0px;
+    width: 320px;
+    height: 300px;
+    opacity: 0.55;
+  }
+  article {
+    .cont-delivery {
+      padding: 50px 0;
+      .delivery {
+        width: 100%;
+        margin: 0 auto;
+        z-index: 2;
+        ul {
+          @include ul-list-style-cicle;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    article {
+      .cont-delivery {
+        padding: 50px 0;
+        .delivery {
+          width: 80%;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    &:after {
+      bottom: 10px;
+      width: 550px;
+      height: 520px;
+    }
+    article {
+      .cont-delivery {
+        padding: 50px 0;
+        .delivery {
+          background-color: white;
+          width: 40%;
+          margin: 0;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    article {
+      & > p {
+        font-size: 24px;
+      }
+      .cont-delivery {
+        .delivery {
+          width: 30%;
+        }
+      }
+    }
+  }
+}
+
+.technology-service {
+  > div {
+    position: relative;
+
+    ul {
+      @include ul-list-style-cicle;
+      padding-left: 30px;
+    }
+    a {
+      position: absolute;
+      right: 50px;
+      bottom: 0;
+    }
+  }
+  .cont-img {
+    @include pattern-dots;
+    &:after {
+      width: 50px;
+      height: 50px;
+      bottom: -30px;
+      right: 50px;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    > div {
+      ul {
+        padding-left: 50px;
+      }
+    }
+    .cont-img:after {
+      width: 100px;
+      height: 100px;
+      top: -60px;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    > div {
+      ul {
+        padding-left: 80px;
+      }
+    }
+    .cont-img:after {
+      top: -60px;
+      right: 100px;
+    }
+  }
+}
+
+#XaaS {
+  overflow: hidden;
+  .xaas-services {
+    z-index: 9;
+    & > a.xaas {
+      position: relative;
+      width: 100%;
+      max-height: 85px;
+      background-color: #f5f5f5;
+      box-shadow: -2px 2px 12px -8px rgba(0, 0, 0, 0.75);
+      transition: all ease 0.25s;
+      z-index: 1;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(
+          220deg,
+          rgba(0, 120, 176, 1) 0%,
+          rgba(5, 159, 173, 1) 40%,
+          rgba(9, 197, 171, 1) 100%
+        );
+        z-index: -1;
+        transition: all 0.25s linear;
+        opacity: 0;
+      }
+
+      &::after {
+        content: "";
+        background-image: url("/img/icons/arrow-blue.svg");
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 30px;
+        top: -20px;
+      }
+
+      &:hover {
+        transition: all 0.25s linear;
+        img {
+          filter: none;
+        }
+        p {
+          transition: all ease 0.2s;
+          color: #fff;
+        }
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+
+      p.a-text {
+        display: inline-block;
+        margin-bottom: 0 !important;
+        transition: all ease 0.2s;
+      }
+
+      img {
+        width: 40px;
+        border-right: 1px solid white;
+        filter: invert(0.5) sepia(1) hue-rotate(192deg) saturate(1000%);
+      }
+      .link-arrow {
+        position: absolute;
+        right: 20px;
+        bottom: 15px;
+        font-size: 10px;
+        font-weight: 200 !important;
+        color: #707070;
+      }
+    }
+    & > a {
+      z-index: 1;
+    }
+  }
+  .decoration {
+    right: -40%;
+    bottom: -10%;
+    z-index: 0;
+  }
+  @include media-breakpoint-up(md) {
+    .xaas-services {
+      & > a.xaas {
+        width: 30%;
+      }
+      & > a {
+      }
+    }
+    .decoration {
+      right: -10%;
+      bottom: -25%;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .xaas-services > a {
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    .xaas-services {
+      & > a.xaas {
+        width: 30%;
+      }
+      & > a {
+      }
+    }
+    .decoration {
+      right: -5%;
+      bottom: -15%;
+    }
+  }
+}
+
+#managed-services {
+  div {
+    ul {
+      @include ul-list-style-cicle;
+      padding-left: 30px;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    > div {
+      ul {
+        padding-left: 50px;
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 100px 0;
+
+    > div {
+      ul {
+        padding-left: 80px;
+      }
+    }
+  }
+}
+
+.content-solutions {
+  #solutions-list {
+    background-color: #f0f5fc;
+    .solution {
+      &.active {
+        > .__title {
+          font-size: 1.14em;
+          font-weight: bold;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -1em;
+            background-color: #5143ba;
+            display: inline-block;
+            width: 2px;
+            height: 120px;
+            margin-left: 0;
+          }
+        }
+
+        .__contact,
+        > p {
+          display: block;
+          opacity: 1;
+          transition: opacity ease 0.2s;
+        }
+
+        .__contact {
+          display: table;
+        }
+      }
+
+      .__contact,
+      > p {
+        display: none;
+        opacity: 0;
+        transition: opacity ease 0.2s;
+      }
+
+      > .__title {
+        position: relative;
+        line-height: 3rem;
+        color: $c-text;
+
+        &::before {
+          content: "\2022";
+          color: $c-primary;
+          font-size: 16px;
+          display: inline-block;
+          width: 0.8em;
+          margin-left: -1em;
+        }
+      }
+
+      > .__contact {
+        font-size: 0.84em;
+        margin-left: auto;
+      }
+    }
+  }
+  .solutions-summary {
+    & > div {
+      @include pattern-dots;
+      &:after {
+        top: -30px;
+        right: 10%;
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    .solutions-summary > div:after {
+      top: -45px;
+      width: 90px;
+      height: 90px;
+    }
+  }
+}
+
+.contact {
+  @include pattern-tech-gray-rtl;
+  &:after {
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    opacity: 0.55;
+  }
+  article {
+    padding: 100px 0;
+    > div {
+      z-index: 9;
+      @include pattern-dots;
+      &:after {
+        left: 30px;
+        bottom: -30px;
+        width: 50px;
+        height: 50px;
+      }
+
+      form {
+        @include contact-form;
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    &:after {
+      width: 450px;
+      height: 450px;
+    }
+    article > div {
+      width: 60%;
+      &:after {
+        left: -60px;
+        bottom: -50px;
+        width: 90px;
+        height: 90px;
+      }
+    }
+  }
+}

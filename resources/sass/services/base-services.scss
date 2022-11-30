@@ -1,0 +1,168 @@
+@import "~bootstrap/scss/bootstrap-grid";
+@import '../shared/mixins';
+
+#cover {
+  @include background-cover;
+  background-position-x: 75%;
+  background-position-y: unset;
+  padding: 300px 0 170px;
+  h1 {
+  }
+  @include media-breakpoint-up(md) {
+    background-position-x: center;
+  }
+}
+
+#service {
+  padding: 50px 0;
+  ul {
+    @include ul-list-style-cicle;
+    padding-left: 30px;
+  }
+  .cont-img {
+    @include pattern-dots;
+    &:after {
+      width: 50px;
+      height: 50px;
+      right: 20px;
+      bottom: 20px;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    ul {
+      padding-left: 30px;
+    }
+    .cont-img {
+      @include pattern-dots;
+      &:after {
+        width: 100px;
+        height: 100px;
+        right: -30px;
+        bottom: -20px;
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    ul {
+      padding-left: 80px;
+    }
+  }
+}
+
+.cont-img {
+  @include media-breakpoint-up(md) {
+    > div {
+      position: sticky;
+      top: 100px;
+      bottom: 20px;
+    }
+  }
+}
+
+#services {
+  padding: 30px 0 50px;
+  background-color: white;
+  @include pattern-tech-gray-rtl;
+  &:after {
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    height: 320px;
+    opacity: .55;
+  }
+  article {
+    position: relative;
+    z-index: 10;
+
+    a.xaas {
+      position: relative;
+      width: 100%;
+      max-height: 85px;
+      background-color: #F5F5F5;
+      box-shadow: -2px 2px 12px -8px rgba(0, 0, 0, 0.75);
+      transition: all ease .25s;
+      z-index: 1;
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(220deg, rgba(0, 120, 176, 1) 0%, rgba(5, 159, 173, 1) 40%, rgba(9, 197, 171, 1) 100%);
+        z-index: -1;
+        transition: all 0.25s linear;
+        opacity: 0;
+      }
+
+      &::after {
+        content: '';
+        background-image: url('/img/icons/arrow-blue.svg');
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 30px;
+        top: -20px;
+      }
+
+      &:hover {
+        transition: all 0.25s linear;
+        img {
+          filter: none;
+        }
+        p {
+          transition: all ease .2s;
+          color: #fff;
+        }
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+
+      p.a-text {
+        display: inline-block;
+        margin-bottom: 0 !important;
+        transition: all ease .2s;
+      }
+
+      img {
+        width: 40px;
+        border-right: 1px solid white;
+        filter: invert(0.5) sepia(1) hue-rotate(192deg) saturate(1000%);
+      }
+      .link-arrow {
+        position: absolute;
+        right: 20px;
+        bottom: 15px;
+        font-size: 10px;
+        font-weight: 200 !important;
+        color: #707070;
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    padding: 120px 0;
+    &:after {
+      width: 450px;
+      height: 430px;;
+    }
+    article {
+      a.xaas {
+        width: 45%;
+        img {
+          width: 40px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    article {
+      a.xaas {
+        width: 30%;
+      }
+    }
+  }
+}

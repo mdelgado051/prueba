@@ -1,0 +1,117 @@
+// Helpers
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Backrounds
+
+@mixin background-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// Patterns
+
+@mixin pattern-tech {
+  position: relative;
+
+  &:after {
+    @include background-cover;
+
+    content: '';
+    position: absolute;
+    background-image: url('/img/tech-pattern.png');
+    z-index: 1;
+  }
+}
+
+@mixin pattern-tech-rtl {
+  @include pattern-tech;
+
+  &:after {
+    transform: rotate(-90deg);
+  }
+}
+
+@mixin pattern-tech-gray {
+  @include pattern-tech;
+  &::after {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+  }
+}
+
+@mixin pattern-tech-gray-rtl {
+  @include pattern-tech-gray;
+  &:after {
+    transform: rotate(-90deg);
+  }
+}
+
+@mixin pattern-dots {
+  position: relative;
+
+  &:after {
+    @include background-cover;
+
+    content: '';
+    position: absolute;
+    background-image: url('/img/dots-pattern-small.png');
+    z-index: 1;
+  }
+  @media screen and (min-width: 768px) {
+    &:after {
+      background-image: url('/img/dots-pattern.png');
+    }
+  }
+}
+
+@mixin ul-list-style-cicle {
+  padding-left: 20px;
+  li {
+    position: relative;
+    line-height: 1.5;
+
+    &::before {
+      position: absolute;
+      content: "\2022";
+      color: #DFDFDF;
+      display: inline-block;
+      left: -1.25em;
+    }
+  }
+}
+
+@mixin contact-form {
+  input, textarea {
+    width: 100%;
+    border: none;
+    border-bottom: .5px solid #DFDFDF;
+    &::placeholder {
+      color: #0078B0;
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+  button {
+    display: block;
+    margin-left: auto;
+  }
+  @media screen and (min-width: 768px) {
+    .w-md-50 {
+      width: 44.5%;
+    }
+    button {
+      margin-left: 75%;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    button {
+      margin-left: 80%;
+    }
+  }
+}

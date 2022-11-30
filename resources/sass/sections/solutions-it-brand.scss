@@ -1,0 +1,122 @@
+@import "~bootstrap/scss/bootstrap-grid";   
+@import '../shared/mixins';
+
+.cover{
+    .cover-description{
+        &::after{
+            background-image: none;
+        }
+        padding: 50px 30px 0;
+        .cont-brands{
+            width: 100%;
+            left: 0;
+            img{
+                width: 85px; 
+            }
+        }
+    }
+    @include media-breakpoint-up(md) {
+        .cover-description{
+            margin-top: 40px;
+            padding-left: 50px;
+            .cont-brands{
+                width: 95%;
+                img{
+                    width: 70px; 
+                }
+            }
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        .cover-description{
+            margin-top: 30px;
+            padding-left: 100px;
+            .cont-brands{
+                width: 90%;
+            }
+        }
+        .cover-img{
+            height: 110vh;
+        }
+    }
+    @include media-breakpoint-up(xl) {
+        .cover-description{
+            padding-top: 100px;
+            .cont-brands{
+                width: 85%;
+                img{
+                    width: 80px; 
+                }
+            }
+        }
+    }
+    @media screen and (min-width:1360px) {
+        .cover-description{
+            padding-top: 230px;
+            .cont-brands{
+                width: 80%;
+                img{
+                    width: 90px; 
+                }
+            }
+        }
+    }
+}
+.certification{
+    padding: 50px 0;
+    @include pattern-tech;
+    &:after {
+        bottom: 0;
+        left: 0;
+        width: 250px;
+        height: 250px;
+        opacity: .55;
+    }
+    article{
+        width: 90%;
+        img{
+            width: 55px;
+            margin: 25px 0px;
+        }
+    }
+    @include media-breakpoint-up(sm) {
+        &:after {
+            width: 250px;
+            height: 250px;
+        }
+        article{
+            width: 70%;
+            img{
+                width: 60px;
+                margin: 30px 15px;
+            }
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        &:after {
+            width: 350px;
+            height: 350px;
+        }
+        padding: 100px 0;
+        article{
+            img{
+                margin: 30px 30px;
+            }
+        }
+    }
+    @include media-breakpoint-up(xl) {
+        article{
+            width: 65%;
+            img{
+                width: 65px;
+                margin: 30px 40px;
+            }
+        }
+    }
+    @media screen and (min-width: 1340px) {
+        article>img{
+            width: 75px;
+            margin: 40px 50px;
+        }
+    }
+}

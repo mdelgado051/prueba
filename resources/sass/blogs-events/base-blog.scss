@@ -1,0 +1,169 @@
+@import '../shared/colors';
+@import "~bootstrap/scss/bootstrap-grid";
+@import '../shared/mixins';
+
+#base-blog {
+  h1, h2, h3, h4, h5, h6, p, blockquote, span, strong, b, a, ul li {
+    font-family: 'Muli', sans-serif !important;
+    line-height: 1.75 !important;
+  }
+
+  ul li, p, span {
+    font-size: 1em !important;
+  }
+
+  iframe {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  iframe, img {
+    max-width: 100% !important;
+  }
+
+  blockquote {
+    font-size: 1.24em !important;
+    border-left: 5px solid #eee !important;
+    padding-left: 15px !important;
+    margin: 2em 1em !important;
+
+    * {
+      font-size: 1.24em !important;
+    }
+  }
+
+  .cover {
+    position: relative;
+    padding: 250px 25px 200px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      position: relative;
+      font-size: 2em;
+    }
+
+    .intro {
+      position: relative;
+      color: #fff;
+      font-size: 1em;
+      text-align: center;
+      font-weight: normal;
+    }
+
+    @include background-cover;
+
+    @include media-breakpoint-up(md) {
+      .intro {
+        font-size: 1.24em;
+      }
+    }
+  }
+
+  .content-blog {
+    position: relative;
+    top: -70px;
+    width: 90%;
+    padding: 30px;
+    margin: 0 auto;
+    background-color: #FAFAFA;
+
+    &:after {
+      width: 50px;
+      height: 50px;
+      left: 20px;
+      top: -30px;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+
+      .author {
+        img {
+          width: 30px;
+          margin-bottom: 10px;
+        }
+      }
+
+      .date {
+        text-transform: capitalize;
+      }
+    }
+
+    .subtitle {
+      width: 100%;
+      @include pattern-dots;
+      &:after {
+        width: 50px;
+        height: 50px;
+        right: 10px;
+        bottom: -30px;
+      }
+      h2 {
+        font-size: 32px;
+        border-left: 1.5px solid $c-complementary;
+      }
+    }
+    .social-media {
+      width: 100%;
+      background-color: $c-low-text;
+      color: #5C5C5C;
+      a {
+        color: #5C5C5C;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      width: 80%;
+      padding: 50px 100px 100px;
+      &:after {
+        width: 80px;
+        height: 80px;
+        left: 30px;
+        top: -40px;
+      }
+      .subtitle {
+        width: 90%;
+        h2 {
+          font-size: 28px;
+        }
+        @include pattern-dots;
+        &:after {
+          width: 80px;
+          height: 80px;
+          right: -50px;
+          bottom: -20px;
+        }
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      width: 80%;
+      padding: 50px 120px 100px;
+      &:after {
+        width: 100px;
+        height: 100px;
+        left: 30px;
+      }
+      .subtitle {
+        h2 {
+          font-size: 32px;
+        }
+      }
+    }
+    @include media-breakpoint-up(xl) {
+      width: 70%;
+      padding: 50px 170px 120px;
+      &:after {
+        left: 70px;
+      }
+    }
+  }
+}
